@@ -1,0 +1,57 @@
+:root {
+  --blackish: #0e0f0cde;
+  --whiteish: #f9f0eb;
+  --font-dark: var(--blackish);
+}
+
+.colors-1 {
+  --color-primary: #395a77;
+  --color-secondary: #2f4639;
+  --color-text: var(--whiteish);
+  --image-effect: screen;
+}
+.colors-2 {
+  --color-primary: #c0e2e3;
+  --color-secondary: #f0e7df;
+  --color-text: #de4e40;
+  --image-effect: multiply;
+}
+.colors-3 {
+  --color-primary: #f1bfb1;
+  --color-secondary: #b5d7cf;
+  --color-text: var(--blackish);
+  --image-effect: multiply;
+}
+
+.colors-4 {
+  --color-primary: #fbbc00;
+  --color-secondary: #fb6538;
+  --color-text: var(--blackish);
+  --image-effect: multiply;
+}
+
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin box($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin scrollBasedAnimate($keyframe) {
+  animation: $keyframe 1s linear;
+  animation-play-state: paused;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+@mixin rule-large($tblr) {
+  border-#{$tblr}: 2px solid currentColor;
+}
+
+@mixin rule-small($tblr) {
+  border-#{$tblr}: 1px dotted currentColor;
+}

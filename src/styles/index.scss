@@ -1,0 +1,192 @@
+@import '_vars';
+@import '_typography';
+@import '_utilities';
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.logo {
+  top: 4.5rem;
+  left: 4.5rem;
+  z-index: 3;
+  position: fixed;
+}
+
+.bg-image {
+  object-fit: cover;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: fixed;
+  object-position: left;
+  @include scrollBasedAnimate(move-image);
+  animation-delay: calc(var(--scroll) * -0.0009s);
+}
+
+@keyframes move-image {
+  50% {
+    transform: translateX(-25%) translateY(0) scale(1.35);
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(-25%) scale(1.7);
+  }
+}
+
+@keyframes changecolor {
+  to {
+    background-color: var(--color-secondary);
+  }
+}
+
+@keyframes changetext {
+  to {
+    color: var(--color-secondary);
+  }
+}
+
+.img-overlay {
+  background-color: var(--color-primary);
+  mix-blend-mode: var(--image-effect);
+  // animation: changecolor 1s linear both;
+  @include scrollBasedAnimate(changecolor);
+  animation-delay: calc(var(--scroll) * -0.0009s);
+  position: fixed;
+  z-index: 1;
+}
+
+.header {
+  background-color: var(--color-primary);
+  position: relative;
+  padding: 2rem 3rem 1rem;
+  z-index: 2;
+  @include scrollBasedAnimate(changecolor);
+  animation-delay: calc(var(--scroll) * -0.0009s);
+  margin-left: auto;
+  max-width: 50vw;
+
+  // &::after {
+  //     content: '';
+  //     position: absolute;
+  //     inset: 0;
+  //     background: url(../assets/noise.svg);
+  //     mix-blend-mode: multiply;
+  //     z-index: -1;
+  //     filter: contrast(100%) brightness(500%);
+  // }
+}
+
+.stylized-tagline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  filter: blur(0.02rem);
+  margin: 0 1rem;
+
+  span {
+    white-space: nowrap;
+  }
+}
+
+.portfolio {
+  text-align: center;
+  margin-top: 1rem;
+
+  .link {
+    margin-right: 1rem;
+    margin-left: 1rem;
+
+    &:not(:last-child)::after {
+      content: '';
+      border-right: 2px solid;
+      position: relative;
+      right: -1.1rem;
+    }
+  }
+}
+
+.credits {
+  margin-top: 3rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--color-text);
+}
+
+.credits-wrapper {
+  width: 45%;
+}
+
+.hidden {
+  display: none;
+}
+
+// Website carbon calculator stuff
+
+/* Inline #2 | http://localhost:1234/ */
+
+#wcb.carbonbadge {
+  --b1: var(--color-text) !important;
+  --b2: var(--color-text) !important;
+  text-align: left !important;
+  // mix-blend-mode: multiply !important;
+}
+
+#wcb #wcb_a {
+  border-radius: 0 0 0 0 !important;
+  color: var(--color-secondary) !important;
+}
+
+#wcb #wcb_g {
+  border-radius: 0 !important;
+  background-color: transparent !important;
+}
+
+@media (max-width: 575.98px) {
+  .u-flex {
+    display: block;
+  }
+
+  .header {
+    max-width: none;
+    margin-top: 100vh;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .logo {
+    position: absolute;
+    left: 5rem;
+    top: 5rem;
+  }
+
+  .bg-image {
+    height: 100vh;
+  }
+
+  .credits-wrapper {
+    width: 100%;
+  }
+
+  @keyframes move-image {
+    to {
+      transform: translateY(-50%) scale(1.7);
+    }
+  }
+}
+
+@media (hover: none) {
+  .touch-link::before {
+    right: 0;
+    width: auto;
+  }
+
+  .stylized-tagline {
+    filter: none;
+  }
+}

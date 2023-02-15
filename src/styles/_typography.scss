@@ -1,0 +1,122 @@
+* {
+  font-family: 'Bebas Neue rev=2', 'Bebas Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+li {
+  margin: 0;
+  color: var(--font-dark);
+  letter-spacing: 0.04em;
+}
+
+.link {
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    position: absolute;
+    background: currentColor;
+    left: -0.05em;
+    bottom: -0.1em;
+    height: 2px;
+    width: 0;
+    transition: right 200ms ease-out;
+    right: 100%;
+  }
+
+  &:hover::before {
+    width: auto;
+    right: 0;
+  }
+}
+
+.heading-1 {
+  // font-family: 'Tanker', sans-serif;
+  // font-size: max(5rem, 8.3vw);
+  // line-height: 0.8;
+  // letter-spacing: 0.04em;
+  font-weight: 700;
+  color: var(--color-text);
+  font-size: max(5rem, 10vw);
+  line-height: 0.85;
+  letter-spacing: 0.02em;
+}
+
+.heading-2 {
+  margin: 0;
+  @extend .heading-1;
+  font-size: max(2.7rem, 3.3vw) !important;
+  line-height: 1;
+  text-align: center;
+  letter-spacing: 0.01em;
+  font-weight: 400;
+}
+
+.heading-3 {
+  margin: 0;
+  @extend .heading-1;
+  font-size: max(1.2rem, 1.7vw) !important;
+  line-height: 1;
+  text-align: center;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+}
+
+.heading-4 {
+  @extend .heading-3;
+  font-size: max(1rem, 1.5vw) !important;
+}
+
+p {
+  color: var(--color-text);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+}
+
+hr {
+  border: 1px solid var(--color-text);
+  width: 20%;
+  margin-bottom: 1.6rem;
+  margin-top: 1rem;
+}
+
+.logo-type {
+  @extend .heading-1;
+  font-size: max(2.2rem, 3.8vw);
+  line-height: 1;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+
+  > .logo-color-span {
+    @extend .heading-1;
+    font-size: 4rem;
+    color: var(--color-primary);
+    letter-spacing: 0.1em;
+    @include scrollBasedAnimate(changetext);
+    animation-delay: calc(var(--scroll) * -0.0009s);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:before {
+      content: '';
+      position: absolute;
+      @include circle(6.5rem);
+      border: 0.5rem solid;
+      left: 50%;
+      top: 50%;
+      transform: translate(-52%, -53%);
+    }
+  }
+}
