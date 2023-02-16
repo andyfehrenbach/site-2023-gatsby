@@ -2,6 +2,10 @@
 @import '_typography';
 @import '_utilities';
 
+@import './pages/_home';
+@import './pages/_portfolio';
+
+
 * {
   box-sizing: border-box;
   scroll-behavior: smooth;

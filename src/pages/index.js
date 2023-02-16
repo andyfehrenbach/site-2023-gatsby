@@ -1,21 +1,12 @@
 import * as React from 'react';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import Layout from '../layout';
 
 export default function Home() {
   return (
     <Layout>
-      <div
-        onLoad={setTimeout(function () {
-          window.scrollTo(0, 0);
-        }, 200)}
-        className='u-bg--primary colors-2'
-      >
-        <div className='logo u-fadein u-delay-4'>
-          <a href='/' className='logo-type'>
-            <span className='logo-color-span'>AF</span>
-          </a>
-        </div>
+      <div className='page-home'>
         <div className='u-overlay u-flex'>
           <div className='u-posRelative'>
             <StaticImage id='image' className='bg-image u-bg-color--primary' src='../static/smokestack.png' alt='extremely small file-size picture of an offshore windmall farm' />
@@ -57,14 +48,17 @@ export default function Home() {
                 </a>
               </p>
               <hr className='u-fadein u-delay-9' />
-              <p className='heading-3'>portfolio pieces:</p>
+              <p className='heading-3'>portfolio:</p>
               <div className='portfolio'>
-                <a className='link touch-link heading-4' target='_blank' rel='noreferrer' href='https://andy-fehrenbach-ps-2021.surge.sh/adel-design-system.html'>
+                <Link className='link touch-link heading-4' to='portfolio/naviguard'>
+                  Naviguard
+                </Link>
+                <Link className='link touch-link heading-4' to='portfolio/adel-design-system'>
                   ADEL Design System
-                </a>
-                <a className='link touch-link heading-4' target='_blank' rel='noreferrer' href='https://andy-fehrenbach-ps-2021.surge.sh/homi.html'>
+                </Link>
+                <Link className='link touch-link heading-4' to='portfolio/homi'>
                   HOMI
-                </a>
+                </Link>
                 <a className='link touch-link heading-4' target='_blank' rel='noreferrer' href='https://codepen.io/andyfehrenbach'>
                   Codepens
                 </a>

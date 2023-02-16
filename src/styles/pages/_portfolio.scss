@@ -1,0 +1,22 @@
+.portfolio-page {
+  background-color: var(--color-primary);
+  position: relative;
+  min-height: 100vh;
+  max-width: toRem(1728);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(30, toRem(50));
+  gap: toRem(10);
+
+  h1 {
+    position: absolute;
+    bottom: 0;
+    transform: rotate(-90deg);
+    left: 3rem;
+    transform-origin: top left;
+    font-size: 10vw;
+    max-width: 100vh;
+
+  }
+}

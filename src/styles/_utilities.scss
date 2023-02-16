@@ -87,3 +87,10 @@
   white-space: nowrap;
   width: 1px;
 }
+
+@function toRem($value) {
+    $remValue: calc(($value / 16)) + rem;
+    @return $remValue;
+}
+
+
