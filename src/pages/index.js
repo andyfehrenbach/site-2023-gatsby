@@ -2,11 +2,15 @@ import * as React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import Layout from '../layout';
+import Logo from '../logo';
 
 export default function Home() {
   return (
     <Layout>
-      <div className='page-home'>
+      <header>
+        <Logo className={'foo'}></Logo>
+      </header>
+      <main className='page-home'>
         <div className='u-overlay u-flex'>
           <div className='u-posRelative'>
             <StaticImage id='image' className='bg-image u-bg-color--primary' src='../static/smokestack.png' alt='extremely small file-size picture of an offshore windmall farm' />
@@ -87,7 +91,7 @@ export default function Home() {
             </section>
           </div>
         </div>
-      </div>
+      </main>
     </Layout>
   );
 }

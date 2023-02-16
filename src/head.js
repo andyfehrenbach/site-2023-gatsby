@@ -3,9 +3,8 @@ import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
 export default function Head() {
-
-  const title = 'Andy Fehrenbach'
-  const description = 'UI designer and developer'
+  const title = 'Andy Fehrenbach';
+  const description = 'UI designer and developer';
 
   return (
     <Helmet>
@@ -18,6 +17,7 @@ export default function Head() {
       <link rel='preconnect' href='https://fonts.googleapis.com' />
       <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin />
       <link href='https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap' rel='stylesheet' />
+      <link href='https://api.fontshare.com/v2/css?f[]=zodiak&display=swap' rel='stylesheet' />
       <title>{title}</title>
       <script src='https://unpkg.com/website-carbon-badges@1.1.3/b.min.js' defer></script>
     </Helmet>

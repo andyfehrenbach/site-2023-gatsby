@@ -14,14 +14,8 @@ export default function Layout({ children, title = false, description = false, p
         }, 200)}
         className='u-bg--primary colors-2'
       >
-        <header>
-          <div className='logo u-fadein u-delay-4'>
-            <a href='/' className='logo-type'>
-              <span className='logo-color-span'>AF</span>
-            </a>
-          </div>
-        </header>
-        <main> {children} </main>
+    
+        <div> {children} </div>
       </div>
     </>
   );
