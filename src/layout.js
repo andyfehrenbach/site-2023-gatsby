@@ -14,7 +14,6 @@ export default function Layout({ children, title = false, description = false, p
         }, 200)}
         className='u-bg--primary colors-2'
       >
-    
         <div> {children} </div>
       </div>
     </>

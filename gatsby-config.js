@@ -18,7 +18,20 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-mdx`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1440
+            }
+          }
+        ]
+      }
+    },
 
     // Additional Directory Config
     {
@@ -40,6 +53,13 @@ module.exports = {
       options: {
         name: `projects`,
         path: `${__dirname}/src/projects/`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `assets`,
+        path: `${__dirname}/src/assets/`
       }
     }
   ]

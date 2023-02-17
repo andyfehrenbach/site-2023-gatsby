@@ -1,27 +1,38 @@
 .portfolio-page {
+  --grid-gap: toRem(10);
+  --page-wrapper: toRem(1728);
   background-color: var(--color-primary);
-  position: relative;
-  // min-height: 100vh;
-  max-width: toRem(1728);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(20, 1fr);
-  grid-template-rows: repeat(30, toRem(50));
-  gap: toRem(10);
+
+  .portfolio-page-wrapper {
+    position: relative;
+    max-width: var(--page-wrapper);
+    margin: 0 auto;
+    // display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(auto-fit, minmax(toRem(50), 1fr));
+    // grid-auto-rows: auto;
+    gap: toRem(10);
+  }
 
   .portfolio-page-header {
-    grid-column: 1 / -1;
-    grid-row: 1 / 4;
-    // background-color: tomato;
-    position: sticky;
-    top: 0;
+    width: 100vw;
+    margin: 3rem 4.5rem;
+
+    &-wrapper {
+      max-width: var(--page-wrapper);
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .logo {
+    position: static;
   }
 
   .project-details {
     display: flex;
     gap: toRem(10);
-    grid-column: 13/-1;
-    grid-row: 2 / 4;
+    margin-left: auto;
 
     div {
       min-width: toRem(180);
@@ -35,8 +46,9 @@
 
   .project-details-data {
     font-family: 'zodiak';
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     letter-spacing: 0.06em;
+    font-weight: 640;
   }
 
   .project-title-small {
@@ -64,25 +76,41 @@
     color: var(--blackish);
   }
 
-  .project-tagline {
-    font-family: 'zodiak';
-    font-size: toRem(56);
-    grid-column-end: -2;
-    margin-right: 27rem;
-    width: 60%;
-    font-style: italic;
-    line-height: 1.1;
+  .featured-image {
+    max-height: 33.1rem;
+    overflow: hidden;
     margin-bottom: 3rem;
   }
 
   .Content {
-    grid-column: 6 / last-line;
-    grid-row: 4;
+    // grid-column: 6 / 20;
+    // grid-row: 4 / 200;
+
+    .gatsby-resp-image-wrapper {
+      margin-bottom: 3rem;
+      filter: (grayscale(100%));
+      // mix-blend-mode: multiply;
+      transition: filter 600ms ease-out;
+
+      &:hover {
+        filter: (grayscale(0));
+      }
+    }
 
     * {
       letter-spacing: 0;
     }
 
+    h2 {
+      font-family: 'zodiak';
+      font-size: toRem(56);
+      grid-column-end: -2;
+      margin-right: 27rem;
+      width: 60%;
+      font-style: italic;
+      line-height: 1.1;
+      margin-bottom: 3rem;
+    }
     p {
       font-family: 'Zodiak';
       letter-spacing: 0;
