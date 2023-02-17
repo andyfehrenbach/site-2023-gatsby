@@ -28,14 +28,12 @@ export default function ProjectLayout({ children, pageContext }) {
             </div>
           </div>
         </header>
-        <div className='portfolio-page-wrapper'>
-          <main className='portfolio-page-main flex justify-between pt5 debug-black'>
-            <div className='relative w-20 mr5'>
-              <h1 className='project-title-large'>{title}</h1>
-            </div>
-            <section className='Content'>{children}</section>
-          </main>
-        </div>
+        <main className='portfolio-page-main'>
+          <div className='relative'>
+            <h1 className='project-title-large'>{title}</h1>
+          </div>
+          <section className='Content'>{children}</section>
+        </main>
         <Link to='/'>&larr; Back</Link>
       </div>
       {/* <pre>{JSON.stringify(props, null, 2)}</pre> */}
