@@ -9,26 +9,22 @@ export default function ProjectLayout({ children, pageContext }) {
     <Layout title={title} description={description}>
       <div className='portfolio-page'>
         <header className='portfolio-page-header'>
-          <div className='portfolio-page-header-wrapper debug'>
+          <div className='portfolio-page-header-wrapper'>
             <div className='logo-wrapper ml4'>
               <Logo className={`u-color-black ml1`}></Logo>
             </div>
-            <div className='ml5 flex'>
-              <h2 className='project-title-small mr2'>{title}/</h2>
-              <div className='project-details'>
-                <div className=''>
-                  <h3 className='project-details-label'>Timeframe</h3>
-                  <p className='project-details-data'>{year}</p>
-                </div>
-                <div className=''>
-                  <h3 className='project-details-label'>Client</h3>
-                  <p className='project-details-data'>{client}</p>
-                </div>
-                <div className=''>
-                  <h3 className='project-details-label'>Role</h3>
-                  <p className='project-details-data'>{workingArrangement}</p>
-                </div>
-              </div>
+            <h2 className='project-title-small'>{title}/</h2>
+            <div className='project-detail'>
+              <h3 className='project-details-label'>Timeframe</h3>
+              <p className='project-details-data'>{year}</p>
+            </div>
+            <div className='project-detail'>
+              <h3 className='project-details-label'>Client</h3>
+              <p className='project-details-data'>{client}</p>
+            </div>
+            <div className='project-detail'>
+              <h3 className='project-details-label'>Role</h3>
+              <p className='project-details-data'>{workingArrangement}</p>
             </div>
           </div>
         </header>
