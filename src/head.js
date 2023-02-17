@@ -14,6 +14,7 @@ export default function Head() {
       <meta name='description' content={description} />
       {/* <link rel="icon" type="image/png" href="favicon.png" sizes="32x32" /> */}
       {/* <link rel="icon" type="image/png" href="favicon-16.png" sizes="16x16" /> */}
+      <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.0/css/tachyons.min.css"></link>
       <link rel='preconnect' href='https://fonts.googleapis.com' />
       <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin />
       <link href='https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap' rel='stylesheet' />

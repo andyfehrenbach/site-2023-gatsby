@@ -16,7 +16,11 @@
 
   .portfolio-page-header {
     width: 100vw;
-    margin: 3rem 4.5rem;
+    padding: 3rem 2.2vw;
+    background-color: var(--color-primary);
+    position: sticky;
+    top: 0;
+    z-index: 1;
 
     &-wrapper {
       max-width: var(--page-wrapper);
@@ -27,6 +31,11 @@
 
   .logo {
     position: static;
+    display: inline-block;
+  }
+
+  .logo-wrapper {
+    width: 17%;
   }
 
   .project-details {
@@ -35,7 +44,7 @@
     margin-left: auto;
 
     div {
-      min-width: toRem(180);
+      min-width: 48%;
     }
   }
 
@@ -53,23 +62,21 @@
 
   .project-title-small {
     font-size: 3.8rem;
-    grid-column: 6 / 13;
-    grid-row: 2 / 3;
+    min-width: 36.3%;
     line-height: 1;
     letter-spacing: 0.02em;
     z-index: 1;
   }
 
   .project-title-large {
-    transform-origin: bottom left;
+    transform-origin: top left;
+    position: absolute;
+    top: 60vh;
     transform: rotate(-90deg);
-    position: fixed;
-    top: initial;
-    left: 23vw;
-    font-size: max(3rem, 10vw);
-    max-width: 100vh;
-    bottom: 0;
+    font-size: max(3rem, 8vw);
     line-height: 1;
+    width: 250%;
+    left: 2rem;
   }
 
   * {
@@ -85,6 +92,7 @@
   .Content {
     // grid-column: 6 / 20;
     // grid-row: 4 / 200;
+    width: 96%;
 
     .gatsby-resp-image-wrapper {
       margin-bottom: 3rem;
