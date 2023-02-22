@@ -16,11 +16,14 @@ li {
   letter-spacing: 0.04em;
 }
 
-em {
+em, strong {
   font-size: inherit;
-  font-weight: inherit;
   color: inherit;
   font-family: inherit;
+}
+
+strong {
+  font-weight: var(--font-weight-bold) !important;
 }
 
 .link {

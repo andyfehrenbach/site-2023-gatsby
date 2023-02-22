@@ -1,0 +1,54 @@
+---
+year: 2021 - 2023
+title: Naviguard
+client: United Health Group
+slug: naviguard
+description: Redesigning a flagship claim negotiation application
+workingArrangement: Consultant
+---
+
+<div className='featured-image'>![ Naviguard Moon Application ](review-reconcile-1.jpg)</div>
+
+## Redesigning Naviguard's claim negotiation application for increased efficiency
+
+### The Problem
+
+The passage of the No Surprises Act in 2022 is hugely beneficial for healthcare consumers. If a patient sees an out-of-network (OON) provider, or received care from a OON provider in an in-network(INN) facility without their knowing, they will only be billed an the INN rate. This means that predatory OON billing can no longer occur. However, someone is still responsible for paying the provider, and that is where United Health Group's OON negotiation subsidiary, Naviguard, comes in. Naviguard works cases submitted by providers to get the providers reimbursed at a rate that is agreeable and based on medicare claim rates.
+
+The main problem with the application they were using? Cases had to be worked one at a time. For every claim submitted by a provider, a separate claim and would be opened up, and a separate negotiation would have to be made.
+
+### The solution
+
+We redesigned the app around the concept of a case set. A case set is a group of claims that all share something in common. For the pilot, the common factor in case sets is the provider. To structure the design, we decided on a task based approach as opposed to a page-based approach. The workflow is divided into milestons and tasks. The task selected determines what components load in the main panel. Componenets are modular and can be reused or implemented in different tasks and pages. The left panel serves as both navigation, and a progress bar that shows how far a case set has progressed.
+
+<div>![ Naviguard Moon Application ](review-reconcile-1.jpg)</div>
+
+One of the most powerful design choices of the application is that cases are dynamic. Liaisions can add, remove, and transfer cases between case sets. As a practical example, if a provider agrees to a given reimbursment rate for 40 out of 50 cases in the set, the other ten cases can be moved to a new case set to be negotiated separately.
+
+<div>![ Naviguard Moon Application - Split Case Set ](split-case-set.jpg)</div>
+
+### Details
+
+The addition of an activity log allows a liasion to quickly get caught up on case activity. Anywhere iconography is used in the application, tooltips are used so that the semantic context is never more than a quick hover away.
+
+<div>![ Naviguard Moon Application - Activity Log ](activity-log.jpg)</div>
+
+The negotiation task and offers component allows liasons to track the offer history.
+
+<div>![ Naviguard Moon Application - Negotiation Task ](negotiation.jpg)</div>
+
+The notification menu, showing three notification types: a reminder (with quick button reschedule), an alert, and an assignment.
+
+<div>![ Naviguard Moon Application - Negotiation Task ](notification-menu.jpg)</div>
+
+### Outcome
+
+This redesign netted several large improvments to Naviguard's work model:
+
+- Despite the huge increase in the volume of submitted claims due to the passage of the NSA, Naviguard is able to **handle the increased volume** with only minor additions to its exisiting liasion head count.
+- Providers get **reimbursed faster** because negotiations take less time and agreements are reached faster.
+- **More agreements are reached**, which means that fewer cases enter the costly and lengthy NSA arbitration process.
+- **Migrating off of Salesforce** and onto an app built on Angular and microservices means Naviguard's tech team is longer limited on what components they can build.
+- **New look and feel** to celebrate a major milestone for the company and incorporate new branding supplied by an agency.
+- Improvements to the **user experience and accessibility** of the application.
+- I got lots of anecdotal feedback from liaisons and other stakeholders after launch. Lots of poeple **applauded the efficiency** with which they could work cases. They loved the new look and feel. The application felt **sleek, fast, modern, and—my favorite—happy.**
