@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <Layout>
       <header>
-        <Logo className={'foo'}></Logo>
+        <Logo className={'change-color'}></Logo>
       </header>
       <main className='page-home'>
         <div className='u-overlay u-flex'>

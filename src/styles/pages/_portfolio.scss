@@ -6,14 +6,19 @@
   background-color: var(--color-primary);
   position: relative;
 
+  @include scrollBasedAnimate(changecolor);
+  animation-delay: calc(var(--scroll) * -0.000099s);
+
   .portfolio-page-header {
+    @include scrollBasedAnimate(changecolor);
+    animation-delay: calc(var(--scroll) * -0.000099s);
     width: 100vw;
     padding: 3rem var(--side-gutter);
     background-color: var(--color-primary);
     position: sticky;
     top: 0;
     z-index: 1;
-    // border-bottom: 0.5rem solid var(--blackish);
+    // border-bottom: 0.5rem solid var(--color-body-text);
 
     &-wrapper {
       // max-width: var(--page-wrapper);
@@ -62,13 +67,49 @@
     z-index: 1;
   }
 
+  .sidebar-wrapper {
+    grid-column: span 4;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 30vh;
+    margin-top: 85vh;
+    padding-left: 1rem;
+
+    .work {
+      position: relative;
+      @extend .project-details-data;
+      font-style: italic;
+      font-weight: var(--font-weight-bold);
+      letter-spacing: -0.01em;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -0.7rem;
+        left: -2px;
+        height: 4px;
+        background: var(--color-body-text);
+        width: 1.2em;
+      }
+    }
+
+    li {
+      font-size: 1.5rem;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+
   .portfolio-page-main {
     position: relative;
     padding: 3rem var(--side-gutter);
     display: grid;
     grid-template-columns: var(--portfolio-grid);
     gap: var(--grid-gap);
-    border-top: 0.5rem solid var(--blackish);
+    border-top: 0.5rem solid var(--color-body-text);
   }
 
   .project-title-large {
@@ -85,7 +126,7 @@
   }
 
   * {
-    color: var(--blackish);
+    color: var(--color-body-text);
   }
 
   .featured-image {
@@ -133,7 +174,7 @@
 
     h3 {
       font-size: toRem(70);
-      border-top: 0.5rem solid var(--blackish);
+      border-top: 0.5rem solid var(--color-body-text);
     }
 
     h3 + p {
@@ -151,9 +192,19 @@
     ul {
       padding: 0 1em;
       li {
+        position: relative;
         margin-top: 1em;
         line-height: 1.6;
         font-size: 1.2rem;
+
+        &::before {
+          content: '\25e4';
+          content: '\25ba';
+          position: absolute;
+          left: -1.4em;
+          font-size: 80%;
+          top: 0.2em;
+        }
       }
     }
 

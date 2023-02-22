@@ -14,6 +14,7 @@ li {
   margin: 0;
   color: var(--font-dark);
   letter-spacing: 0.04em;
+  font-weight: 400;
 }
 
 em, strong {
@@ -24,6 +25,15 @@ em, strong {
 
 strong {
   font-weight: var(--font-weight-bold) !important;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+   li {
+    margin-top: 0.2em;
+   }
 }
 
 .link {
@@ -106,11 +116,8 @@ hr {
   > .logo-color-span {
     @extend .heading-1;
     font-size: 4rem;
-    color: var(--color-primary);
+    color: var(--color-body-text);
     letter-spacing: 0.1em;
-    @include scrollBasedAnimate(changetext);
-    animation-delay: calc(var(--scroll) * -0.0009s);
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -123,6 +130,12 @@ hr {
       left: 50%;
       top: 50%;
       transform: translate(-52%, -53%);
+    }
+
+    .change-color {
+      color: var(--color-primary);
+      @include scrollBasedAnimate(changetext);
+      animation-delay: calc(var(--scroll) * -0.0009s);
     }
   }
 }

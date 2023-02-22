@@ -14,18 +14,21 @@
   --color-primary: #395a77;
   --color-secondary: #2f4639;
   --color-text: var(--whiteish);
+  --color-body-text: var(--whiteish);
   --image-effect: screen;
 }
 .colors-2 {
   --color-primary: #c0e2e3;
   --color-secondary: #f0e7df;
   --color-text: #de4e40;
+  --color-body-text: var(--blackish);
   --image-effect: multiply;
 }
 .colors-3 {
   --color-primary: #f1bfb1;
   --color-secondary: #b5d7cf;
   --color-text: var(--blackish);
+  --color-body-text: var(--blackish);
   --image-effect: multiply;
 }
 
@@ -33,6 +36,7 @@
   --color-primary: #fbbc00;
   --color-secondary: #fb6538;
   --color-text: var(--blackish);
+  --color-body-text: var(--blackish);
   --image-effect: multiply;
 }
 

@@ -4,7 +4,7 @@ import Layout from '../../layout';
 import Logo from '../../logo';
 
 export default function ProjectLayout({ children, pageContext }) {
-  const { title, description, client, year, slug, workingArrangement } = pageContext.frontmatter;
+  const { title, description, client, year, workingArrangement } = pageContext.frontmatter;
 
   const data = useStaticQuery(graphql`
     query LinkQuery {
@@ -29,7 +29,7 @@ export default function ProjectLayout({ children, pageContext }) {
         <header className='portfolio-page-header'>
           <div className='portfolio-page-header-wrapper'>
             <div className='logo-wrapper ml4'>
-              <Logo className={`u-color-black ml1`}></Logo>
+              <Logo className={`ml1`}></Logo>
             </div>
             <div className='flex project-detail-wrapper pt1'>
               <div className='project-detail'>
@@ -51,21 +51,25 @@ export default function ProjectLayout({ children, pageContext }) {
           </div>
         </header>
         <main className='portfolio-page-main'>
-          <div className='relative'></div>
-          <section className='Content'>{children}</section>
+          <div className='sidebar-wrapper'>
+            <nav className='sidebar'>
+              <h2 className='work'>More Work:</h2>
+              <ul className='mt4'>
+                {links.map((link) => (
+                  <li key={link.id}>
+                    <Link to={`/portfolio/${link.frontmatter.slug}`}>{link.frontmatter.title}</Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+          <section className='Content'>
+            {children}
+            <h2 className='mt5'>
+              <Link to='/'>&larr; Home</Link>
+            </h2>
+          </section>
         </main>
-        <nav>
-          <h2 className='work'>More Work:</h2>
-          <ul>
-            {links.map((link) => (
-              <li key={link.id}>
-                <Link to={`/portfolio/${link.frontmatter.slug}`}>{link.frontmatter.title}</Link>
-              </li>
-            ))}
-          </ul>
-
-          <Link to='/'>&larr; Back</Link>
-        </nav>
       </div>
       {/* <pre>{JSON.stringify(props, null, 2)}</pre> */}
     </Layout>
