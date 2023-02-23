@@ -1,10 +1,25 @@
 import * as React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
-import { StaticImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage, getSrc } from 'gatsby-plugin-image';
 import Layout from '../layout';
 import Logo from '../logo';
 
 export default function Home() {
+  const data = useStaticQuery(graphql`
+    query ImageQuery {
+      allFile(filter: { absolutePath: { regex: "/homepage/" } }) {
+        nodes {
+          id
+          childImageSharp {
+            gatsbyImageData(placeholder: NONE, pngOptions: { compressionSpeed: 10, quality: 1 }, quality: 1, formats: PNG)
+          }
+        }
+      }
+    }
+  `);
+
+  const randomImage = data.allFile.nodes[Math.floor(Math.random() * data.allFile.nodes.length)];
+
   return (
     <Layout>
       <header>
@@ -13,7 +28,7 @@ export default function Home() {
       <main className='page-home'>
         <div className='u-overlay u-flex'>
           <div className='u-posRelative'>
-            <StaticImage id='image' className='bg-image u-bg-color--primary' src='../static/smokestack.png' alt='extremely small file-size picture of an offshore windmall farm' />
+            <GatsbyImage className='bg-image' image={getImage(randomImage)}></GatsbyImage>
             <div className='u-overlay img-overlay'></div>
           </div>
         </div>
