@@ -8,7 +8,7 @@ export default function ProjectLayout({ children, pageContext }) {
 
   const data = useStaticQuery(graphql`
     query LinkQuery {
-      allMdx {
+      allMdx(sort: { frontmatter: { linkOrder: ASC } }) {
         nodes {
           id
           frontmatter {
@@ -25,18 +25,19 @@ export default function ProjectLayout({ children, pageContext }) {
   return (
     <Layout title={title} description={description}>
       <div className='portfolio-page'>
-        <h1 className='project-title-large'>{title}</h1>
+      <div className="u-fadein">
+        <h1 className='project-title-large blurred'>{title}</h1>
         <header className='portfolio-page-header'>
           <div className='portfolio-page-header-wrapper'>
             <div className='logo-wrapper ml4'>
-              <Logo className={`ml1`}></Logo>
+              <Logo className='ml1 blurred'></Logo>
             </div>
             <div className='flex project-detail-wrapper pt1'>
               <div className='project-detail'>
-                <h2 className='project-title-small'>{title}/</h2>
+                <h2 className='project-title-small blurred'>{title}/</h2>
               </div>
               <div className='project-detail'>
-                <h3 className='project-details-label'>Timeframe</h3>
+                <h3 className='project-details-label'>Year</h3>
                 <p className='project-details-data'>{year}</p>
               </div>
               <div className='project-detail'>
@@ -57,9 +58,19 @@ export default function ProjectLayout({ children, pageContext }) {
               <ul className='mt4'>
                 {links.map((link) => (
                   <li key={link.id}>
-                    <Link to={`/portfolio/${link.frontmatter.slug}`}>{link.frontmatter.title}</Link>
+                    <Link className='link' to={`/portfolio/${link.frontmatter.slug}`}>{link.frontmatter.title}</Link>
                   </li>
                 ))}
+                <li>
+                  <Link to='https://andy-fehrenbach-ps-2021.surge.sh/' className='link link-external'>
+                    2020 portfolio
+                  </Link>
+                </li>
+                <li>
+                  <Link to='https://codepen.io/andyfehrenbach/pens/showcase' className='link link-external'>
+                    Codepens
+                  </Link>
+                </li>
               </ul>
             </nav>
           </div>
@@ -70,6 +81,7 @@ export default function ProjectLayout({ children, pageContext }) {
             </h2>
           </section>
         </main>
+      </div>
       </div>
       {/* <pre>{JSON.stringify(props, null, 2)}</pre> */}
     </Layout>

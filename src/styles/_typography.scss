@@ -17,7 +17,8 @@ li {
   font-weight: 400;
 }
 
-em, strong {
+em,
+strong {
   font-size: inherit;
   color: inherit;
   font-family: inherit;
@@ -31,9 +32,9 @@ ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
-   li {
+  li {
     margin-top: 0.2em;
-   }
+  }
 }
 
 .link {
@@ -47,7 +48,7 @@ ul {
     position: absolute;
     background: currentColor;
     left: -0.05em;
-    bottom: -0.1em;
+    bottom: 0;
     height: 2px;
     width: 0;
     transition: right 200ms ease-out;
@@ -69,13 +70,16 @@ ul {
 }
 
 .heading-2 {
+  color: var(--color-text);
   margin: 0;
-  @extend .heading-1;
-  font-size: max(2.7rem, 3.3vw) !important;
-  line-height: 1;
+  font-size: max(2.7rem, 3.2vw) !important;
+  line-height: 1.2;
   text-align: center;
-  letter-spacing: 0.01em;
-  font-weight: 400;
+  letter-spacing: -0.02em;
+  font-weight: 440;
+  font-family: var(--font-serif);
+  font-style: italic;
+  filter: blur(0px);
 }
 
 .heading-3 {
@@ -103,39 +107,30 @@ hr {
   border: 1px solid var(--color-text);
   width: 20%;
   margin-bottom: 1.6rem;
-  margin-top: 1rem;
+  margin-top: 1.4rem;
 }
 
 .logo-type {
   @extend .heading-1;
-  font-size: max(2.2rem, 3.8vw);
-  line-height: 1;
+  position: relative;
+  font-size: 4rem;
+  color: var(--color-body-text);
   letter-spacing: 0.1em;
   text-decoration: none;
 
-  > .logo-color-span {
-    @extend .heading-1;
-    font-size: 4rem;
-    color: var(--color-body-text);
-    letter-spacing: 0.1em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  &:before {
+    content: '';
+    position: absolute;
+    @include circle(6.5rem);
+    border: 0.5rem solid;
+    left: 50%;
+    top: 50%;
+    transform: translate(-52%, -53%);
+  }
 
-    &:before {
-      content: '';
-      position: absolute;
-      @include circle(6.5rem);
-      border: 0.5rem solid;
-      left: 50%;
-      top: 50%;
-      transform: translate(-52%, -53%);
-    }
-
-    &.change-color {
-      color: var(--color-primary);
-      @include scrollBasedAnimate(changetext);
-      animation-delay: calc(var(--scroll) * -0.0009s);
-    }
+  &.change-color {
+    color: var(--color-primary);
+    @include scrollBasedAnimate(changetext);
+    animation-delay: calc(var(--scroll) * -0.0009s);
   }
 }
