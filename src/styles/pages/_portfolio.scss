@@ -31,7 +31,7 @@
 
   .portfolio-page-main {
     position: relative;
-    padding: 0 var(--side-gutter);
+    padding: 0 var(--side-gutter) 4rem;
     display: grid;
     grid-template-columns: var(--portfolio-grid);
     gap: var(--grid-gap);
@@ -103,7 +103,7 @@
   .sidebar {
     position: sticky;
     top: 12.8vw;
-    margin-top: 41vw;
+    margin-top: 48vw;
     padding-left: 1rem;
 
     .work {
@@ -145,6 +145,32 @@
     margin-bottom: 3rem;
 
     .gatsby-resp-image-wrapper { margin-left: 0;}
+  }
+
+  .home-link {
+    margin: auto;
+    // margin-bottom: var(--side-gutter);
+    // margin-left: var(--side-gutter);
+    font-size: 10vw !important;
+    color: var(--color-secondary) !important;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  .footer {
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+  }
+
+  .curtain-image {
+    mix-blend-mode: multiply;
+
+    .gatsby-resp-image-wrapper {
+      position: fixed !important;
+    }
   }
 
   .Content {

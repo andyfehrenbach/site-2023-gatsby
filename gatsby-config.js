@@ -19,6 +19,12 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
+      resolve: `gatsby-plugin-image`,
+      options: {
+        backgroundColor: 'transparent'
+      }
+    },
+    {
       resolve: `gatsby-plugin-mdx`,
 
       options: {
