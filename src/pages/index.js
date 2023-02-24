@@ -21,7 +21,7 @@ export default function Home() {
   const randomImage = data.allFile.nodes[Math.floor(Math.random() * data.allFile.nodes.length)];
 
   return (
-    <Layout>
+    <Layout title='Andy Fehrenbach' description='Home'>
       <header className='fixed-wrapper'>
         <Logo className={'change-color'}></Logo>
       </header>

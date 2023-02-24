@@ -8,6 +8,8 @@ export default function Layout({ children, title = false, description = false, p
   // const colors = [`colors-1`, `colors-2`, `colors-3`];
   // const randomColor = colors[Math.floor(Math.random() * colors.length)];
 
+
+
   useEffect(() => window.scrollTo(0, 0), []);
   useEffect(() => {
     window.addEventListener(

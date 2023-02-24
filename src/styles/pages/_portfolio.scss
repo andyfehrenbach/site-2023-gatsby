@@ -183,7 +183,7 @@
       font-size: 1.45rem;
       font-weight: 440;
       line-height: 1.4;
-      @include bringhust;
+      @include bringhurst;
     }
 
     h3 {
@@ -274,6 +274,7 @@
     .Content {
       h2 {
         font-size: 2rem;
+        width: 100%;
       }
 
       p, ul li { font-size: 1.2rem;}

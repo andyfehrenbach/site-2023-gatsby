@@ -2,9 +2,9 @@ import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-export default function Head() {
-  const title = 'Andy Fehrenbach';
-  const description = 'UI designer and developer';
+export default function Head({ title, description }) {
+  // const title = title |'Andy Fehrenbach';
+  // const description = description | 'UI designer and developer';
 
   return (
     <Helmet>
