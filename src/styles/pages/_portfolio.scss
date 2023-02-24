@@ -29,6 +29,16 @@
     }
   }
 
+  .portfolio-page-main {
+    position: relative;
+    padding: 0 var(--side-gutter);
+    display: grid;
+    grid-template-columns: var(--portfolio-grid);
+    gap: var(--grid-gap);
+    // border-top: 0.5rem solid var(--color-body-text);
+  }
+
+
   .logo {
     position: static;
     display: inline-block;
@@ -44,6 +54,7 @@
   .project-detail-wrapper {
     grid-column: 5/-1;
     justify-content: space-between;
+    align-items: flex-end;
   }
 
   .project-detail {
@@ -65,8 +76,8 @@
 
   .project-title-small {
     grid-column: span 4;
-    font-size: clamp(1rem, 4.8vw, 6rem);
-    line-height: 0.9;
+    font-size: clamp(2rem, 4.8vw, 6rem);
+    line-height: 0.7;
     letter-spacing: 0.02em;
     z-index: 1;
   }
@@ -76,10 +87,10 @@
     position: absolute;
     top: 96vh;
     transform: rotate(-90deg);
-    font-size: min(7.8vw, 8.7rem);
-    line-height: 0.9;
-    width: 50vw;
-    left: 3.1vw;
+    font-size: min(7.8vw, 8rem);
+    line-height: 0.8;
+    width: 40vw;
+    left: 3.6vw;
     bottom: 0;
     margin: 0;
     height: 1em;
@@ -91,8 +102,8 @@
 
   .sidebar {
     position: sticky;
-    top: 14rem;
-    margin-top: 34rem;
+    top: 12.8vw;
+    margin-top: 41vw;
     padding-left: 1rem;
 
     .work {
@@ -121,14 +132,6 @@
     }
   }
 
-  .portfolio-page-main {
-    position: relative;
-    padding: 3rem var(--side-gutter);
-    display: grid;
-    grid-template-columns: var(--portfolio-grid);
-    gap: var(--grid-gap);
-    border-top: 0.5rem solid var(--color-body-text);
-  }
 
 
 
@@ -137,16 +140,19 @@
   }
 
   .featured-image {
-    max-height: 33.1rem;
+    max-height: 30vw;
     overflow: hidden;
     margin-bottom: 3rem;
+
+    .gatsby-resp-image-wrapper { margin-left: 0;}
   }
 
   .Content {
-    grid-column: 5 / 19;
+    grid-column: 5 / -2;
 
     .gatsby-resp-image-wrapper {
-      margin-bottom: 3rem;
+      margin-bottom: 4rem;
+      margin-left: 0 !important;
       filter: (grayscale(100%));
       transition: filter 600ms ease-out;
       &:hover {
@@ -166,6 +172,7 @@
       line-height: 1.1;
       margin-bottom: 2.8rem;
       letter-spacing: -0.03em;
+      font-weight: 440;
     }
 
     p,
@@ -174,9 +181,9 @@
       font-family: var(--font-serif);
       letter-spacing: -0.01em;
       font-size: 1.45rem;
-      max-width: 38ch;
-      font-weight: 450;
-      line-height: 1.5;
+      font-weight: 440;
+      line-height: 1.4;
+      @include bringhust;
     }
 
     h3 {
@@ -217,6 +224,62 @@
 
     .gatsby-resp-image-wrapper {
       margin-top: 1rem;
+    }
+  }
+
+  @media (max-width: 578px) {
+    --side-gutter: 4vw;
+
+    .portfolio-page-header-wrapper {
+      display: block;
+    }
+
+    .portfolio-page-main {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    .project-title-large {
+      display: none;
+    }
+
+    .project-detail-wrapper :not(:first-child) {
+      display: none;
+    }
+
+    .portfolio-page-header-wrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    .project-title-small {
+      margin-left: 3rem;
+      line-height: 1;
+    }
+
+    .featured-image {
+      max-height: 30rem;
+      margin-bottom: 0;
+    }
+
+    .home-link {
+      display: none;
+    }
+
+    .sidebar {
+      position: static;
+      margin: 2rem 0;
+    }
+
+    .Content {
+      h2 {
+        font-size: 2rem;
+      }
+
+      p, ul li { font-size: 1.2rem;}
+
+
+
     }
   }
 }

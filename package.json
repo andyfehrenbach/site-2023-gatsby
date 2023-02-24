@@ -5,6 +5,8 @@
   "version": "0.1.0",
   "license": "0BSD",
   "scripts": {
+    "deploy": "surge --domain www.andyfehrenbach.com",
+    "test-deploy": "surge --domain icy-locket.surge.sh",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "gatsby develop",

@@ -4,7 +4,7 @@ import Head from './head';
 
 import '../src/styles/index.scss';
 
-export default function Layout({ children, title = false, description = false, path = false }) {
+export default function Layout({ children, title = false, description = false, path = false, className }) {
   // const colors = [`colors-1`, `colors-2`, `colors-3`];
   // const randomColor = colors[Math.floor(Math.random() * colors.length)];
 
@@ -22,7 +22,7 @@ export default function Layout({ children, title = false, description = false, p
   return (
     <>
       <Head title={title} description={description} path={path} />
-      <div className='colors-2'>
+      <div className={`colors-2 ${className}`}>
         <div> {children} </div>
       </div>
     </>

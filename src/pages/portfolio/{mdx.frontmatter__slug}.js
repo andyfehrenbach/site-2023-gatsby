@@ -76,8 +76,8 @@ export default function ProjectLayout({ children, pageContext }) {
           </div>
           <section className='Content'>
             {children}
-            <h2 className='mt5'>
-              <Link to='/'>&larr; Home</Link>
+            <h2 className='home-link mt5'>
+              <a className='link' href='/'>&larr; Home</a>
             </h2>
           </section>
         </main>
