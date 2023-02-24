@@ -26,7 +26,7 @@ export default function ProjectLayout({ children, pageContext }) {
     <Layout title={title} description={description}>
       <div className='portfolio-page'>
       <div className="u-fadein">
-        <h1 className='project-title-large blurred'>{title}</h1>
+        <h1 className='project-title-large blurred animated-blur'>{title}</h1>
         <header className='portfolio-page-header'>
           <div className='portfolio-page-header-wrapper'>
             <div className='logo-wrapper ml4'>

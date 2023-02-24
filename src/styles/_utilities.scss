@@ -96,4 +96,15 @@
     @return $remValue;
 }
 
+.animated-blur {
+  @include scrollBasedAnimate(blurText);
+    animation-delay: calc(var(--scroll) * -0.0009s);
+    animation-timing-function: ease-in;
+
+}
+
+@keyframes blurText {
+  to { filter: blur(0.75rem); }
+}
+
 
