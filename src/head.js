@@ -2,9 +2,9 @@ import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-export default function Head({ title, description }) {
-  // const title = title |'Andy Fehrenbach';
-  // const description = description | 'UI designer and developer';
+export default function Head(props) {
+  const title = props.title || 'Andy Fehrenbach';
+  const description = props.description || 'UI designer and developer';
 
   return (
     <Helmet>
@@ -12,8 +12,6 @@ export default function Head({ title, description }) {
       <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
       <meta name='viewport' content='width=device-width, initial-scale=1.0' />
       <meta name='description' content={description} />
-      {/* <link rel="icon" type="image/png" href="favicon.png" sizes="32x32" /> */}
-      {/* <link rel="icon" type="image/png" href="favicon-16.png" sizes="16x16" /> */}
       <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.0/css/tachyons.min.css"></link>
       <link rel='preconnect' href='https://fonts.googleapis.com' />
       <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin />
