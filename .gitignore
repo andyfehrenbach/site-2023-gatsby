@@ -71,6 +71,7 @@ yarn-error.log
 # Original Images
 
 src/assets/images/
+src/assets/*.png
 src/projects/*/*.jpg
 src/projects/*/*.png
 src/projects/*/*.gif
