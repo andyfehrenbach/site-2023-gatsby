@@ -106,5 +106,10 @@
 @keyframes blurText {
   to { filter: blur(0.75rem); }
 }
+.u-textSerif {
+  font-family: var(--font-serif);
+  letter-spacing: 0;
+}
+
 
 

@@ -84,15 +84,20 @@ export default function ProjectLayout({ children, pageContext }) {
                     </Link>
                   </li>
                 </ul>
+              <div className='mt5 mr4'>
+                <p className='u-textSerif i'>
+                  This site uses various methods to create images with a very small file size. Images and video are the largest files served by websites, and the carbon footprint created by storing and serving them is larger than many people realize.
+                </p>
+              </div>
               </nav>
             </div>
             <section className='Content'>{children}</section>
           </main>
         </div>
         <div className='footer'>
-          {/* <div className='img-underlay h-100'>
+          <div className='img-underlay absolute absolute--fill'>
 
-          </div> */}
+          </div>
           <GatsbyImage className='curtain-image' image={getImage(randomImage)}></GatsbyImage>
 
           <div className='absolute absolute--fill flex'>
