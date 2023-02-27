@@ -90,9 +90,11 @@ export default function ProjectLayout({ children, pageContext }) {
           </main>
         </div>
         <div className='footer'>
+          {/* <div className='img-underlay h-100'>
+
+          </div> */}
           <GatsbyImage className='curtain-image' image={getImage(randomImage)}></GatsbyImage>
 
-          <div className='img-overlay'></div>
           <div className='absolute absolute--fill flex'>
             <h1 className='home-link heading-2'>
               <a className='link' href='/'>
