@@ -84,8 +84,8 @@ export default function ProjectLayout({ children, pageContext }) {
                     </Link>
                   </li>
                 </ul>
-              <div className='mt5 mr4'>
-                <p className='u-textSerif i'>
+              <div className='mt4 mr4'>
+                <p className='u-textSerif i f6'>
                   This site uses various methods to create images with a very small file size. Images and video are the largest files served by websites, and the carbon footprint created by storing and serving them is larger than many people realize.
                 </p>
               </div>

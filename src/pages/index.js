@@ -47,8 +47,8 @@ export default function Home() {
                 <span className='heading-1 u-fadein u-delay-7'>Change</span>
                 <hr className='u-fadein u-delay-7' />
               </h1>
-              <p className='heading-2 stylized-tagline u-fadein u-delay-8'>My goal is to use my UI design and development skills to help a company that is making meaningful progress in the race to net zero emissions by 2050.</p>
-              <hr className='u-fadein u-delay-8' />
+              {/* <p className='heading-2 stylized-tagline u-fadein u-delay-8'>My goal is to use my UI design and development skills to help a company that is making meaningful progress in the race to net zero emissions by 2050.</p>
+              <hr className='u-fadein u-delay-8' /> */}
               <p className='heading-2 stylized-tagline u-fadein u-delay-8'>I am interested in making sustainable, resource-light web applications that feature great design, engaging content, and interactivity.</p>
               <hr className='u-fadein u-delay-9' />
               <p className='heading-3'>portfolio:</p>
