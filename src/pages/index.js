@@ -1,10 +1,34 @@
 import * as React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
 import Layout from '../layout';
 import Logo from '../logo';
 
+gsap.registerPlugin(ScrollTrigger);
+const { useLayoutEffect, useRef } = React;
+
+
 export default function Home() {
+    const main = useRef();
+
+     useLayoutEffect(() => {
+       let ctx = gsap.context(() => {
+         // use scoped selectors
+         gsap.to(['.img-overlay', '.header'], {
+           backgroundColor: '#f0e7df',
+           duration: 3,
+           scrollTrigger: {
+             scrub: 1
+           }
+         });
+         // or refs
+       }, main);
+
+       return () => ctx.revert();
+     }, []);
+
   const data = useStaticQuery(graphql`
     query ImageQuery {
       allFile(filter: { absolutePath: { regex: "/homepage/" } }) {
@@ -20,12 +44,15 @@ export default function Home() {
 
   const randomImage = data.allFile.nodes[Math.floor(Math.random() * data.allFile.nodes.length)];
 
+
+
+
   return (
     <Layout title='Andy Fehrenbach' description='Home'>
       <header className='fixed-wrapper'>
         <Logo className={'change-color'}></Logo>
       </header>
-      <main className='page-home'>
+      <main ref={ main } className='page-home'>
         <div className='u-overlay u-flex'>
           <div className='u-posRelative'>
             <GatsbyImage className='bg-image' image={getImage(randomImage)}></GatsbyImage>
