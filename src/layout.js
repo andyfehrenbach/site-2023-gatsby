@@ -15,13 +15,11 @@ export default function Layout({ children, title = false, description = false, p
   useLayoutEffect(() => {
     let tl = gsap.timeline({
       scrollTrigger: {
-        scrub: 1
+        scrub: 0.8
       }
     });
 
-    let textTl = gsap.timeline({
-
-    });
+    let textTl = gsap.timeline({});
     let ctx = gsap.context(() => {
       // use scoped selectors
       tl.to(['.img-overlay', '.header', '.portfolio-page', '.portfolio-page-header'], {
@@ -32,28 +30,64 @@ export default function Layout({ children, title = false, description = false, p
           color: '#f0e7df'
         },
         0
+      ).to(
+        '.bg-image',
+        {
+          x: '-10rem',
+        }, 0
       );
 
       textTl
         .from(
-          '.heading-1',
+          '.fadeUp',
           {
-            y: '0.8em',
-            duration: 1.3,
-            ease: 'power4.out',
-            stagger: { amount: 1 }
+            y: '0.4em',
+            duration: 1.5,
+            ease: 'power2.out',
+            stagger: {
+              amount: 1.7,
+              ease: 'power1.out'
+            }
           },
           0
         )
         .from(
-          '.heading-1',
+          '.fadeUp',
           {
             opacity: 0,
-            duration: 2,
-            stagger: { amount: 1.2 }
-          }, 0.6);
+            duration: 1,
+            stagger: {
+              amount: 1.7,
+              ease: 'power1.out'
+            }
+          },
+          0.5
+        )
+        .fromTo(
+          '.bg-image',
+          {
+            opacity: 0,
+            scale: 1.2
+          },
+          {
+            ease: 'power1.out',
+            duration: 2.5,
+            opacity: 1,
+            scale: 1.3,
+            xPercent: 5,
+            yPercent: -15
+          },
+          '>-1'
+        )
+        .from(
+          '.change-color',
+          {
+            opacity: 0,
+            duration: 1
+          },
+          '>-1'
+        );
     }, main);
-
 
     return () => ctx.revert();
   }, []);
@@ -63,7 +97,7 @@ export default function Layout({ children, title = false, description = false, p
   return (
     <>
       <Head title={title} description={description} path={path} />
-      <div ref={main} className={`colors-2 ${className}`}>
+      <div ref={main} className={`colors-2 u-bg-color--primary ${className}`}>
         <div> {children} </div>
       </div>
     </>

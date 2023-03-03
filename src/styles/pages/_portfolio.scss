@@ -260,6 +260,7 @@
     .portfolio-page-main {
       display: flex;
       flex-direction: column-reverse;
+      margin-bottom: 0;
     }
 
     .project-title-large {
@@ -285,13 +286,13 @@
       margin-bottom: 0;
     }
 
-    .home-link {
-      display: none;
-    }
-
     .sidebar {
       position: static;
       margin: 2rem 0;
+    }
+
+    .footer {
+      display: none;
     }
 
     .Content {

@@ -43,18 +43,18 @@ export default function ProjectLayout({ children, pageContext }) {
                 <Logo className='ml1 blurred'></Logo>
               </div>
               <div className='flex project-detail-wrapper pt1'>
-                <div className='project-detail'>
+                <div className='project-detail fadeUp'>
                   <h2 className='project-title-small blurred'>{title}/</h2>
                 </div>
-                <div className='project-detail'>
+                <div className='project-detail fadeUp'>
                   <h3 className='project-details-label'>Year</h3>
                   <p className='project-details-data'>{year}</p>
                 </div>
-                <div className='project-detail'>
+                <div className='project-detail fadeUp'>
                   <h3 className='project-details-label'>Client</h3>
                   <p className='project-details-data'>{client}</p>
                 </div>
-                <div className='project-detail'>
+                <div className='project-detail fadeUp'>
                   <h3 className='project-details-label'>Role</h3>
                   <p className='project-details-data'>{workingArrangement}</p>
                 </div>
