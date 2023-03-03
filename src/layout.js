@@ -38,6 +38,9 @@ export default function Layout({ children, title = false, description = false, p
       );
 
       textTl
+        .from('.header', {
+          opacity: 0
+        })
         .from(
           '.fadeUp',
           {
