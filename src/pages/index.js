@@ -1,33 +1,13 @@
 import * as React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/all';
 import Layout from '../layout';
 import Logo from '../logo';
 
-gsap.registerPlugin(ScrollTrigger);
-const { useLayoutEffect, useRef } = React;
 
 
 export default function Home() {
-    const main = useRef();
 
-     useLayoutEffect(() => {
-       let ctx = gsap.context(() => {
-         // use scoped selectors
-         gsap.to(['.img-overlay', '.header'], {
-           backgroundColor: '#f0e7df',
-           duration: 3,
-           scrollTrigger: {
-             scrub: 1
-           }
-         });
-         // or refs
-       }, main);
-
-       return () => ctx.revert();
-     }, []);
 
   const data = useStaticQuery(graphql`
     query ImageQuery {
@@ -44,15 +24,12 @@ export default function Home() {
 
   const randomImage = data.allFile.nodes[Math.floor(Math.random() * data.allFile.nodes.length)];
 
-
-
-
   return (
     <Layout title='Andy Fehrenbach' description='Home'>
       <header className='fixed-wrapper'>
         <Logo className={'change-color'}></Logo>
       </header>
-      <main ref={ main } className='page-home'>
+      <main className='page-home'>
         <div className='u-overlay u-flex'>
           <div className='u-posRelative'>
             <GatsbyImage className='bg-image' image={getImage(randomImage)}></GatsbyImage>
@@ -63,21 +40,21 @@ export default function Home() {
           <div className='header'>
             <section>
               <h1 className='stylized-tagline blurred'>
-                <span className='heading-2 u-fadein u-delay-1'>I am a</span>
+                <span className='heading-2 u-delay-1'>I am a</span>
                 <hr className='u-fadein u-delay-1 mt3' />
-                <span className='heading-1 u-fadein u-delay-2'>UI Designer</span>
-                <span className='heading-1 u-fadein u-delay-3'>And</span>
-                <span className='heading-1 u-fadein u-delay-4'>Developer</span>
+                <span className='heading-1 u-delay-2'>UI Designer</span>
+                <span className='heading-1 u-delay-3'>And</span>
+                <span className='heading-1 u-delay-4'>Developer</span>
                 <hr className='u-fadein u-delay-4' />
-                <span className='heading-1 u-fadein u-delay-5'>Focused On</span>
-                <span className='heading-1 u-fadein u-delay-6'>Climate</span>
-                <span className='heading-1 u-fadein u-delay-7'>Change</span>
+                <span className='heading-1 u-delay-5'>Focused On</span>
+                <span className='heading-1 u-delay-6'>Climate</span>
+                <span className='heading-1 u-delay-7'>Change</span>
                 <hr className='u-fadein u-delay-7' />
               </h1>
-              {/* <p className='heading-2 stylized-tagline u-fadein u-delay-8'>My goal is to use my UI design and development skills to help a company that is making meaningful progress in the race to net zero emissions by 2050.</p>
-              <hr className='u-fadein u-delay-8' /> */}
-              <p className='heading-2 stylized-tagline u-fadein u-delay-8'>I am interested in making sustainable, resource-light web applications that feature great design, engaging content, and interactivity.</p>
-              <hr className='u-fadein u-delay-9' />
+              {/* <p className='heading-2 stylized-tagline u-delay-8'>My goal is to use my UI design and development skills to help a company that is making meaningful progress in the race to net zero emissions by 2050.</p>
+              <hr className=' u-delay-8' /> */}
+              <p className='heading-2 stylized-tagline u-delay-8'>I am interested in making sustainable, resource-light web applications that feature great design, engaging content, and interactivity.</p>
+              <hr className=' u-delay-9' />
               <p className='heading-3'>portfolio:</p>
               <div className='portfolio'>
                 <Link className='link touch-link heading-4' to='portfolio/naviguard'>

@@ -7,24 +7,16 @@
   background-color: var(--color-primary);
   position: relative;
 
-  @include scrollBasedAnimate(changecolor);
-  animation-delay: calc(var(--scroll) * -0.000099s);
-
   .portfolio-page-header {
-    @include scrollBasedAnimate(changecolor);
-    animation-delay: calc(var(--scroll) * -0.000099s);
     width: 100vw;
     padding: 3rem var(--side-gutter);
     background-color: var(--color-primary);
     position: sticky;
     top: 0;
     z-index: 1;
-    // border-bottom: 0.5rem solid var(--color-body-text);
 
     &-wrapper {
-      // max-width: var(--page-wrapper);
       display: grid;
-      // grid-template-columns: repeat(20, 1fr);
       grid-template-columns: var(--portfolio-grid);
       gap: var(--grid-gap);
     }
@@ -36,7 +28,6 @@
     display: grid;
     grid-template-columns: var(--portfolio-grid);
     gap: var(--grid-gap);
-    // border-top: 0.5rem solid var(--color-body-text);
     // set a margin equal to the height of the curtain reveal at the page bottom
     margin-bottom: calc(var(--reveal-height) - 5vh);
   }
