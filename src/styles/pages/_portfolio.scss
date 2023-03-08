@@ -2,8 +2,8 @@
   --grid-gap: 0.5rem;
   --page-wrapper: 108rem;
   --side-gutter: 2.2vw;
-  --portfolio-grid: repeat(auto-fill, minmax(60px, 1fr));
-  --reveal-height: 80vh;
+  --portfolio-grid: repeat(auto-fill, minmax(50px, 1fr));
+  --reveal-height: 100vh;
   background-color: var(--color-primary);
   position: relative;
 
@@ -30,7 +30,7 @@
     grid-template-columns: var(--portfolio-grid);
     gap: var(--grid-gap);
     // set a margin equal to the height of the curtain reveal at the page bottom
-    margin-bottom: calc(var(--reveal-height) - 5vh);
+    margin-bottom: var(--reveal-height);
   }
 
   .logo {
@@ -48,23 +48,22 @@
   .project-detail-wrapper {
     grid-column: 5/-1;
     align-items: flex-end;
-    justify-content: space-between;
   }
 
   .project-detail:not(:last-child) {
-    padding-right: 2.5vw;
+    padding-right: 3.9vw;
   }
 
   .project-details-label {
-    font-size: 1.3rem;
+    font-size: 0.9rem;
     letter-spacing: 0.06em;
+    line-height: 1;
   }
 
   .project-details-data {
     font-family: var(--font-serif);
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 640;
-    margin-top: 0.1rem;
     letter-spacing: 0;
   }
 
@@ -78,11 +77,12 @@
 
     .project-year {
       font-size: 0.3em;
-      position: relative;
-      transform: translateY(-2.7rem);
+      position: absolute;
       display: inline-block;
       font-weight: var(--font-weight-bold);
       margin-left: 0.2em;
+      top: -0.7em;
+      width: 10rem;
     }
   }
 
@@ -160,9 +160,10 @@
   }
 
   .home-link {
+    @include circle-behind(4.3em, var(--color-secondary));
     margin: auto;
-    font-size: 10vw !important;
-    color: var(--color-secondary) !important;
+    font-size: 8vw !important;
+    color: var(--color-body-text) !important;
 
     a {
       color: inherit;

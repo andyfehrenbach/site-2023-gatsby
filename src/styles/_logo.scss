@@ -1,6 +1,6 @@
 .logo-type {
   @extend .heading-1;
-  position: relative;
+  @include circle-behind(1.5em);
   bottom: 0.05em;
   font-size: clamp(2rem, 4.8vw, 6rem);
   color: var(--color-body-text);
@@ -8,13 +8,8 @@
   text-decoration: none;
   font-weight: 400;
 
-  &:before {
-    content: '';
-    position: absolute;
-    @include circle(1.5em);
+  &::before {
     border: 0.13em solid;
-    left: 50%;
-    top: 50%;
     transform: translate(-52%, -53%);
   }
 

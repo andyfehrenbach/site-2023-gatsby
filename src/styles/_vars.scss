@@ -71,3 +71,16 @@
   width: var(--bringhurst);
   max-width: 100%;
 }
+
+@mixin circle-behind($size: 2em, $color: transparent) {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    @include circle($size);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $color;
+  }
+}

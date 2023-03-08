@@ -43,11 +43,11 @@ export default function ProjectLayout({ children, pageContext }) {
                 <Logo className='ml1 blurred'></Logo>
               </div>
               <div className='flex flex-wrap project-detail-wrapper pt1'>
-                <div className='project-detail fadeUp mb3'>
+                <div className='project-detail fadeUp mb3 mr-auto'>
                   <h2 className='project-title-small'>{title}
                     <sup className='project-year fadeUp'>{yearStart} — { yearEnd }</sup></h2>
                 </div>
-                <div className='flex flex-grow-1 mb3'>
+                <div className='flex mb3'>
                   <div className='project-detail fadeUp'>
                     <h3 className='project-details-label'>Client</h3>
                     <p className='project-details-data'>{client}</p>
@@ -106,7 +106,7 @@ export default function ProjectLayout({ children, pageContext }) {
           <div className='absolute absolute--fill flex'>
             <h1 className='home-link heading-2'>
               <a className='link' href='/'>
-                &larr; Home
+                Home
               </a>
             </h1>
           </div>
