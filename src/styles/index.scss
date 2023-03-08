@@ -1,6 +1,7 @@
 @import '_font-face';
 @import '_vars';
 @import '_typography';
+@import '_logo';
 @import '_utilities';
 
 @import './pages/_home';
@@ -22,31 +23,6 @@ body {
   left: 4.5rem;
   z-index: 3;
   position: fixed;
-}
-
-.logo-type {
-  @extend .heading-1;
-  position: relative;
-  font-size: 4rem;
-  color: var(--color-body-text);
-  letter-spacing: 0.1em;
-  text-decoration: none;
-
-  &:before {
-    content: '';
-    position: absolute;
-    @include circle(6.5rem);
-    border: 0.5rem solid;
-    left: 50%;
-    top: 50%;
-    transform: translate(-52%, -53%);
-  }
-
-  &.change-color {
-    color: var(--color-primary);
-    @include scrollBasedAnimate(changetext);
-    animation-delay: calc(var(--scroll) * -0.0009s);
-  }
 }
 
 .bg-image {

@@ -1,0 +1,26 @@
+.logo-type {
+  @extend .heading-1;
+  position: relative;
+  bottom: 0.05em;
+  font-size: clamp(2rem, 4.8vw, 6rem);
+  color: var(--color-body-text);
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  font-weight: 400;
+
+  &:before {
+    content: '';
+    position: absolute;
+    @include circle(1.5em);
+    border: 0.13em solid;
+    left: 50%;
+    top: 50%;
+    transform: translate(-52%, -53%);
+  }
+
+  &.change-color {
+    color: var(--color-primary);
+    @include scrollBasedAnimate(changetext);
+    animation-delay: calc(var(--scroll) * -0.0009s);
+  }
+}

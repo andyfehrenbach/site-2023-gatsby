@@ -21,8 +21,8 @@ export default function Layout({ children, title = false, description = false, p
 
     let textTl = gsap.timeline({});
     let ctx = gsap.context(() => {
-      // use scoped selectors
-      tl.to(['.img-overlay', '.header', '.portfolio-page', '.portfolio-page-header'], {
+      // all the containers that need to change background color on scroll
+      tl.to(['.img-overlay', '.header', '.portfolio-page', '.portfolio-page-header', '.content-wrapper'], {
         backgroundColor: '#f0e7df'
       }).to(
         '.change-color',

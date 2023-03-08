@@ -5,7 +5,7 @@ import Layout from '../../layout';
 import Logo from '../../logo';
 
 export default function ProjectLayout({ children, pageContext }) {
-  const { title, description, client, year, workingArrangement } = pageContext.frontmatter;
+  const { title, description, client, role, yearStart, yearEnd, workingArrangement } = pageContext.frontmatter;
 
   const data = useStaticQuery(graphql`
     query LinkQuery {
@@ -42,21 +42,24 @@ export default function ProjectLayout({ children, pageContext }) {
               <div className='logo-wrapper ml4'>
                 <Logo className='ml1 blurred'></Logo>
               </div>
-              <div className='flex project-detail-wrapper pt1'>
-                <div className='project-detail fadeUp'>
-                  <h2 className='project-title-small blurred'>{title}/</h2>
+              <div className='flex flex-wrap project-detail-wrapper pt1'>
+                <div className='project-detail fadeUp mb3'>
+                  <h2 className='project-title-small'>{title}
+                    <sup className='project-year fadeUp'>{yearStart} — { yearEnd }</sup></h2>
                 </div>
-                <div className='project-detail fadeUp'>
-                  <h3 className='project-details-label'>Year</h3>
-                  <p className='project-details-data'>{year}</p>
-                </div>
-                <div className='project-detail fadeUp'>
-                  <h3 className='project-details-label'>Client</h3>
-                  <p className='project-details-data'>{client}</p>
-                </div>
-                <div className='project-detail fadeUp'>
-                  <h3 className='project-details-label'>Role</h3>
-                  <p className='project-details-data'>{workingArrangement}</p>
+                <div className='flex flex-grow-1 mb3'>
+                  <div className='project-detail fadeUp'>
+                    <h3 className='project-details-label'>Client</h3>
+                    <p className='project-details-data'>{client}</p>
+                  </div>
+                  <div className='project-detail fadeUp'>
+                    <h3 className='project-details-label'>Role</h3>
+                    <p className='project-details-data'>{ role }</p>
+                  </div>
+                  <div className='project-detail fadeUp'>
+                    <h3 className='project-details-label'>Arrangement</h3>
+                    <p className='project-details-data'>{workingArrangement}</p>
+                  </div>
                 </div>
               </div>
             </div>
