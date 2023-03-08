@@ -9,7 +9,7 @@
 
   .portfolio-page-header {
     width: 100vw;
-    padding: 4rem var(--side-gutter) 3rem;
+    padding: 3.5rem var(--side-gutter) 2.5rem;
     background-color: var(--color-primary);
     position: sticky;
     top: 0;
@@ -51,8 +51,8 @@
     justify-content: space-between;
   }
 
-  .project-detail {
-    padding-right: 4vw;
+  .project-detail:not(:last-child) {
+    padding-right: 2.5vw;
   }
 
   .project-details-label {
@@ -62,7 +62,7 @@
 
   .project-details-data {
     font-family: var(--font-serif);
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 640;
     margin-top: 0.1rem;
     letter-spacing: 0;
