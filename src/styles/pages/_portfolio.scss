@@ -28,7 +28,7 @@
     display: grid;
     grid-template-columns: var(--portfolio-grid);
     gap: var(--grid-gap);
-    // set a margin equal to the height of the curtain reveal at the page bottom
+    margin-bottom: 100vh;
   }
 
   .logo {

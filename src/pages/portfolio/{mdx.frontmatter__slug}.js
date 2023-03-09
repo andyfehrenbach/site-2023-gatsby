@@ -50,9 +50,9 @@ export default function ProjectLayout({ children, pageContext }) {
       scrollTrigger: {
         trigger: '.portfolio-page-main',
         start: 'bottom bottom',
-        end: "+=3000",
+        end: "+=4500",
         scrub: 0.4,
-        // markers: true,
+        markers: true,
       }
     });
 
@@ -60,11 +60,11 @@ export default function ProjectLayout({ children, pageContext }) {
       portfolioTl
         .from('.footer', {
           y: '10rem',
-          duration: 2
+          duration: 1.5
         })
         .from('.home-link', {
           scale: 0,
-          duration: 8
+          duration: 8.5
         });
 
     }, portfolio);
