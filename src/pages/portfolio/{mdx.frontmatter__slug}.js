@@ -52,7 +52,7 @@ export default function ProjectLayout({ children, pageContext }) {
         start: 'bottom bottom',
         end: "+=4500",
         scrub: 0.4,
-        markers: true,
+        // markers: true,
       }
     });
 
@@ -60,7 +60,8 @@ export default function ProjectLayout({ children, pageContext }) {
       portfolioTl
         .from('.footer', {
           y: '10rem',
-          duration: 1.5
+          duration: 1.5,
+          ease: 'power1.in',
         })
         .from('.home-link', {
           scale: 0,
