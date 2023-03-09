@@ -1,11 +1,12 @@
 import * as React from 'react';
+import { Link } from 'gatsby';
 
 export default function Logo({ className }) {
   return (
     <div className='logo'>
-      <a href='/' className={`logo-type ${className}`}>
+      <Link to='/' className={`logo-type ${className}`}>
         AF
-      </a>
+      </Link>
     </div>
   );
 }
