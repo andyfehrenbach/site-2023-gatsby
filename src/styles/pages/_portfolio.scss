@@ -3,7 +3,6 @@
   --page-wrapper: 108rem;
   --side-gutter: 2.2vw;
   --portfolio-grid: repeat(auto-fill, minmax(50px, 1fr));
-  --reveal-height: 100vh;
   background-color: var(--color-primary);
   position: relative;
 
@@ -30,7 +29,6 @@
     grid-template-columns: var(--portfolio-grid);
     gap: var(--grid-gap);
     // set a margin equal to the height of the curtain reveal at the page bottom
-    margin-bottom: var(--reveal-height);
   }
 
   .logo {
@@ -167,6 +165,7 @@
 
     a {
       color: inherit;
+      opacity: 0.95;
     }
   }
 
@@ -178,7 +177,7 @@
     position: fixed;
     bottom: 0;
     z-index: -1;
-    height: var(--reveal-height);
+    height: 100vh;
   }
 
   .curtain-image {

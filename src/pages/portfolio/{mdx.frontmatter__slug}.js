@@ -1,8 +1,18 @@
 import * as React from 'react';
+// Gastby Stuff
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+
+// Gsap Stuff
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
+
+// Layout Stuff
 import Layout from '../../layout';
 import Logo from '../../logo';
+
+const { useRef, useLayoutEffect } = React;
+gsap.registerPlugin(ScrollTrigger);
 
 export default function ProjectLayout({ children, pageContext }) {
   const { title, description, client, role, yearStart, yearEnd, workingArrangement } = pageContext.frontmatter;
@@ -32,9 +42,38 @@ export default function ProjectLayout({ children, pageContext }) {
   const links = data.allMdx.nodes;
   const randomImage = data.allFile.nodes[Math.floor(Math.random() * data.allFile.nodes.length)];
 
+  const portfolio = useRef();
+
+  useLayoutEffect(() => {
+    let portfolioTl = gsap.timeline({
+      stagger: 1,
+      scrollTrigger: {
+        trigger: '.portfolio-page-main',
+        start: 'bottom bottom',
+        end: "+=3000",
+        scrub: 0.4,
+        markers: true,
+      }
+    });
+
+    let ctx = gsap.context(() => {
+      portfolioTl
+        .from('.footer', {
+          y: '10rem',
+          duration: 2
+        })
+        .from('.home-link', {
+          scale: 0,
+          duration: 8
+        });
+
+    }, portfolio);
+    return () => ctx.revert();
+  }, []);
+
   return (
     <Layout title={title} description={description}>
-      <div className='portfolio-page'>
+      <div ref={portfolio} className='portfolio-page'>
         <div className='u-fadein'>
           <h1 className='project-title-large blurred animated-blur'>{title}</h1>
           <header className='portfolio-page-header'>
