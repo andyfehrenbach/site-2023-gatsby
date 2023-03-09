@@ -60,8 +60,7 @@ export default function ProjectLayout({ children, pageContext }) {
       portfolioTl
         .from('.footer', {
           y: '10rem',
-          duration: 1.5,
-          ease: 'power1.in',
+          duration: 1.5
         })
         .from('.home-link', {
           scale: 0,
