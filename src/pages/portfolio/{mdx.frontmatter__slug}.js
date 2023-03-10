@@ -53,7 +53,7 @@ export default function ProjectLayout({ children, pageContext }) {
         start: 'bottom bottom',
         end: "+=3000",
         scrub: 0.4,
-        markers: true,
+        // markers: true,
       }
     });
 
