@@ -45,6 +45,7 @@ export default function ProjectLayout({ children, pageContext }) {
   const portfolio = useRef();
 
   useLayoutEffect(() => {
+    alert('running!');
     let portfolioTl = gsap.timeline({
       stagger: 1,
       scrollTrigger: {
