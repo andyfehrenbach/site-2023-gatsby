@@ -12,9 +12,10 @@ const { useLayoutEffect, useRef } = React;
 export default function Layout({ children, title = false, description = false, path = false, className }) {
   const main = useRef();
 
+  // grab whether or not the animation has played from session storage
+  const hasAnimationPlayed = sessionStorage.getItem('hasAnimationPlayed');
+
   useLayoutEffect(() => {
-    // grab whether or not the animation has played from session storage
-    const hasAnimationPlayed = sessionStorage.getItem('hasAnimationPlayed');
     let tl = gsap.timeline({
       scrollTrigger: {
         scrub: 0.8
@@ -45,7 +46,7 @@ export default function Layout({ children, title = false, description = false, p
           },
           0
         );
-      if (hasAnimationPlayed === 'false') {
+      if (!hasAnimationPlayed) {
         textTl
           .from('.header', {
             opacity: 0
@@ -103,7 +104,7 @@ export default function Layout({ children, title = false, description = false, p
     }, main);
 
     return () => ctx.revert();
-  }, []);
+  }, [hasAnimationPlayed]);
 
   useEffect(() => window.scrollTo(0, 0), []);
 
