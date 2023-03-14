@@ -2,7 +2,7 @@
   --grid-gap: 0.5rem;
   --page-wrapper: 108rem;
   --side-gutter: 2.2vw;
-  --portfolio-grid: repeat(auto-fill, minmax(50px, 1fr));
+  --portfolio-grid: repeat(auto-fill, minmax(55px, 1fr));
   background-color: var(--color-primary);
   position: relative;
 
@@ -185,84 +185,6 @@
 
     .gatsby-resp-image-wrapper {
       position: fixed !important;
-    }
-  }
-
-  .Content {
-    grid-column: 5 / -2;
-
-    .gatsby-resp-image-wrapper {
-      margin-bottom: 4rem;
-      margin-left: 0 !important;
-      filter: (grayscale(100%));
-      transition: filter 600ms ease-out;
-      &:hover {
-        filter: (grayscale(0));
-      }
-    }
-
-    * {
-      letter-spacing: 0;
-    }
-
-    h2 {
-      font-family: var(--font-serif);
-      font-size: 3.1rem;
-      font-style: italic;
-      line-height: 1.1;
-      letter-spacing: -0.03em;
-      font-weight: 440;
-    }
-
-    p,
-    ul,
-    li {
-      font-family: var(--font-serif);
-      letter-spacing: -0.01em;
-      font-size: 1.45rem;
-      font-weight: 440;
-      line-height: 1.4;
-      @include bringhurst;
-    }
-
-    h3 {
-      font-size: toRem(70);
-      border-top: 0.5rem solid var(--color-body-text);
-    }
-
-    h3 + p {
-      margin-top: 1.5rem;
-    }
-
-    p + h3 {
-      margin-top: 1.1em;
-    }
-
-    p + p {
-      margin-top: 1.1em;
-    }
-
-    ul {
-      padding: 0 1em;
-      li {
-        position: relative;
-        margin-top: 1em;
-        line-height: 1.6;
-        font-size: 1.2rem;
-
-        &::before {
-          content: '\25e4';
-          content: '\25ba';
-          position: absolute;
-          left: -1.4em;
-          font-size: 80%;
-          top: 0.2em;
-        }
-      }
-    }
-
-    .gatsby-resp-image-wrapper {
-      margin-top: 1rem;
     }
   }
 

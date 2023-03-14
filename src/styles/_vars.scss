@@ -74,3 +74,8 @@
     background-color: $color;
   }
 }
+
+@function toRem($value) {
+    $remValue: calc(($value / 16)) + rem;
+    @return $remValue;
+}

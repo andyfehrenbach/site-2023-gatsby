@@ -11,9 +11,11 @@ const { useLayoutEffect, useRef } = React;
 
 export default function Layout({ children, title = false, description = false, path = false, className }) {
   const main = useRef();
-
   // grab whether or not the animation has played from session storage
-  const hasAnimationPlayed = sessionStorage.getItem('hasAnimationPlayed');
+  const hasAnimationPlayed = useEffect(() => {
+    sessionStorage.getItem('hasAnimationPlayed');
+    return hasAnimationPlayed;
+  }, []);
 
   useLayoutEffect(() => {
     let tl = gsap.timeline({
@@ -46,7 +48,8 @@ export default function Layout({ children, title = false, description = false, p
           },
           0
         );
-      if (!hasAnimationPlayed) {
+      if (hasAnimationPlayed && hasAnimationPlayed !== 'true') {
+        console.log(hasAnimationPlayed);
         textTl
           .from('.header', {
             opacity: 0

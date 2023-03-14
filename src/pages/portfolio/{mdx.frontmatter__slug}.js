@@ -88,15 +88,15 @@ export default function ProjectLayout({ children, pageContext }) {
                 </div>
                 <div className='flex mb3'>
                   <div className='project-detail fadeUp'>
-                    <h3 className='project-details-label'>Client</h3>
+                    <h3 className='project-details-label press-►'>Client</h3>
                     <p className='project-details-data'>{client}</p>
                   </div>
                   <div className='project-detail fadeUp'>
-                    <h3 className='project-details-label'>Role</h3>
+                    <h3 className='project-details-label press-►'>Role</h3>
                     <p className='project-details-data'>{ role }</p>
                   </div>
                   <div className='project-detail fadeUp'>
-                    <h3 className='project-details-label'>Arrangement</h3>
+                    <h3 className='project-details-label press-►'>Arrangement</h3>
                     <p className='project-details-data'>{workingArrangement}</p>
                   </div>
                 </div>

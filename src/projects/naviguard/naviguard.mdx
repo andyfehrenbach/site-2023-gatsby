@@ -14,19 +14,28 @@ linkOrder: 1
 
 <div className='content-wrapper'>
 
-## Redesigning Naviguard's claim negotiation application for increased efficiency
+## Redesigning a flagship claim negotiation application for increased efficiency
 
+The passage of the No Surprises Act in 2022 was hugely beneficial for healthcare consumers. If a patient visited an out-of-network (OON) provider, or received care from a OON provider in an in-network(INN) facility without their knowing, they would only be billed an the INN rate. For example, let's say Natalie delivers a baby at an INN hospital, but the attending anesthesiologist delivering the epidural is OON (a very commonn scenario). Under the NSA, the insurance company will only bill Natalie at the INN rate. Hooray Natalie!
+
+With Natalie's portion taken care of, UHG sends the claim data to Naviguard to negotiate the remaining payout.
 </div>
 
 ### The Problem
+In the pre-existing application, liasons would get assigned cases for negotiation one at a time. For every claim submitted by a provider, a separate case needed to be opened, and a separate negotiation needed to be made. The claim would move through a series of steps, represented by different tabs in the application.
 
-The passage of the No Surprises Act in 2022 is hugely beneficial for healthcare consumers. If a patient sees an out-of-network (OON) provider, or received care from a OON provider in an in-network(INN) facility without their knowing, they will only be billed an the INN rate. This means that predatory OON billing can no longer occur. However, someone is still responsible for paying the provider, and that is where United Health Group's OON negotiation subsidiary, Naviguard, comes in. Naviguard works cases submitted by providers to get the providers reimbursed at a rate that is agreeable and based on medicare claim rates.
+#### A lack of flexibility
+It was difficult for a claim to move backwards in process—which would happen frequently when liaisons discovered that there was an error in the submitted claim. If an error was found, they would have to close the case, open a new one, and start over.
 
-The main problem with the application they were using? Cases had to be worked one at a time. For every claim submitted by a provider, a separate claim and would be opened up, and a separate negotiation would have to be made.
+#### A lack of efficiency
+Over time, we learned that providers would agree to a reimbursement for a large group of related claims. For instance, They might agree to 105% of the going Medicare rate for all chin stitches, regardless of how much the provider billed individually. Once that agreement was reached, negotiation details and documentation would be entered for each claim—a very labor-intensive process. If only there was a way to group claims together so that this process only needed to be repeated once per provider...
 
 ### The solution
+We redesigned the app around the concept of a case set. A case set is a group of claims that all share something in common. For the pilot, the common factor in case sets is the provider. To structure the design, we decided on a task-based approach (whereas the previous iteration was based on pages). The workflow is divided into milestones and tasks, and the selected task determines what components load in the main panel. In the example below, the "Review Negotiation Benchmarks" task loads the "Case Set Details" and "Claim Details" components. This exemplifies the underlying design philosophy for the app:
 
-We redesigned the app around the concept of a case set. A case set is a group of claims that all share something in common. For the pilot, the common factor in case sets is the provider. To structure the design, we decided on a task-based approach as opposed to a page-based approach. The workflow is divided into milestones and tasks. The task selected determines what components load in the main panel. Components are modular and can be reused or implemented in different tasks and pages. The left panel serves as both navigation, and a progress bar that shows how far a case set has progressed.
+> For any given task I may need to do, the data needed to complete it should be at arm's reach.
+
+ The Liaison should not have jump back and forth between pages, and even external apps, to complete the task at hand. By implementing modular architecture, compoenents can be included in any task where they are useful. The left app panel serves as both task-based navigation, and a progress bar that shows how far a case set has progressed.
 
 <div>![ Naviguard Moon Application ](review-reconcile-1.jpg)</div>
 
