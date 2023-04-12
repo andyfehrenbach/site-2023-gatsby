@@ -188,6 +188,26 @@
     }
   }
 
+  .before-after {
+    display: flex;
+    gap: 2rem;
+    position: relative;
+    margin-bottom: 2rem;
+
+    div {
+      margin-top: 0;
+      flex: 1;
+    }
+
+    .gatsby-resp-image-wrapper {
+      margin: 0;
+    }
+
+    .gatsby-resp-image-image {
+      box-shadow: none !important;
+    }
+  }
+
   @media (max-width: 578px) {
     --side-gutter: 4vw;
     .portfolio-page-header {
@@ -215,7 +235,6 @@
       margin-bottom: 0;
     }
 
-
     .project-detail-wrapper :not(:first-child) {
       display: none;
     }
@@ -233,7 +252,6 @@
       .project-year {
         display: none;
       }
-
     }
 
     .featured-image {

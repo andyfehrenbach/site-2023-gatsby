@@ -84,7 +84,7 @@ export default function ProjectLayout({ children, pageContext }) {
               <div className='flex flex-wrap project-detail-wrapper pt1'>
                 <div className='project-detail fadeUp mb3 mr-auto'>
                   <h2 className='project-title-small'>{title}
-                    <sup className='project-year fadeUp'>{yearStart} — { yearEnd }</sup></h2>
+                    <sup className='project-year fadeUp'>{yearStart}{yearEnd ? `— ${yearEnd}` : '' }</sup></h2>
                 </div>
                 <div className='flex mb3'>
                   <div className='project-detail fadeUp'>
