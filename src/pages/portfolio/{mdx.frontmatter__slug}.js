@@ -116,14 +116,15 @@ export default function ProjectLayout({ children, pageContext }) {
                     </li>
                   ))}
                   <li>
-                    <Link to='https://andy-fehrenbach-ps-2021.surge.sh/' className='link link-external'>
+
+                    <a href='https://andy-fehrenbach-ps-2021.surge.sh/' target='_blank' rel='noreferrer' className='link link-external'>
                       2020 portfolio
-                    </Link>
+                    </a>
                   </li>
                   <li>
-                    <Link to='https://codepen.io/andyfehrenbach/pens/showcase' className='link link-external'>
+                    <a href='https://codepen.io/andyfehrenbach/pens/showcase' target='_blank' rel='noreferrer' className='link link-external'>
                       Codepens
-                    </Link>
+                    </a>
                   </li>
                 </ul>
               <div className='mt4 mr4'>

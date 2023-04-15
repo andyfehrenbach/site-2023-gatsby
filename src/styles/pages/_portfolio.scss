@@ -91,7 +91,7 @@
     transform: rotate(-90deg);
     font-size: min(7.8vw, 8rem);
     line-height: 0.8;
-    width: 40vw;
+    width: 38vw;
     left: 3.6vw;
     bottom: 0;
     margin: 0;
@@ -235,6 +235,10 @@
       margin-bottom: 0;
     }
 
+    .project-detail-wrapper {
+      padding-top: 0;
+    }
+
     .project-detail-wrapper :not(:first-child) {
       display: none;
     }
@@ -264,6 +268,10 @@
       margin-top: 0;
     }
 
+    .gatsby-resp-image-wrapper {
+      filter: none !important;
+    }
+
     .sidebar {
       position: static;
       margin: 2rem 0;
@@ -271,6 +279,10 @@
 
     .footer {
       display: none;
+    }
+
+    .before-after {
+      display: block;
     }
 
     .Content {

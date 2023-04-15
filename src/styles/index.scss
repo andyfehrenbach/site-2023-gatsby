@@ -149,7 +149,7 @@ body {
 
   .header {
     max-width: none;
-    margin-top: 100vh;
+    margin-top: 94vh;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
   }
@@ -162,10 +162,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    .logo-type {
+      font-size: 7rem;
+    }
   }
 
   .bg-image {
     height: 100vh;
+    transform: none !important;
   }
 
   .credits-wrapper {
